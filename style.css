@@ -1,0 +1,272 @@
+/* === Additions/Modifications to style.css === */
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #0056b3;
+    color: #fff;
+    padding: 1rem 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative; /* Added for potential positioning */
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    margin-top: 0;
+    font-style: italic;
+}
+
+/* Style for the Vocabulary Tracker Button */
+.vocab-button {
+    display: inline-block;
+    background-color: #ffc107; /* Yellow color */
+    color: #333;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.vocab-button i {
+    margin-right: 5px;
+}
+
+.vocab-button:hover {
+    background-color: #e0a800;
+}
+
+
+#today-summary {
+    background-color: #e6f0ff;
+    color: #333;
+    padding: 15px;
+    margin: 20px auto 0; /* Adjusted margin */
+    border-radius: 8px;
+    max-width: 800px;
+    border: 1px solid #b3d1ff;
+}
+
+#today-summary h2 {
+    margin-top: 0;
+    color: #0056b3;
+}
+
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Calendar View Styles */
+#calendar-view {
+    background-color: #fff;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#calendar-view h2 {
+    color: #0056b3;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 0;
+    text-align: center;
+}
+
+#calendar-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Spacing between days */
+    justify-content: center; /* Center days in the grid */
+    margin-top: 15px;
+}
+
+.calendar-day {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Make them circles */
+    font-weight: bold;
+    font-size: 0.9em;
+    cursor: default; /* Indicate non-clickable */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid #ddd; /* Subtle border */
+}
+
+.calendar-day.completed {
+    background-color: #4CAF50; /* Green for completed */
+    color: white;
+    border-color: #388E3C;
+}
+
+.calendar-day.incomplete {
+    background-color: #f8d7da; /* Light red/pink for incomplete */
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+.calendar-day.future { /* Optional: Style for future days if needed */
+    background-color: #e9ecef;
+    color: #6c757d;
+    border-color: #ced4da;
+}
+
+
+/* Existing styles for week/day... */
+.week {
+    background-color: #fff;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ... (rest of your existing CSS) ... */
+
+.day {
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #fdfdfd;
+    transition: background-color 0.3s ease;
+}
+
+.day.today {
+    border-left: 5px solid #0056b3;
+    background-color: #e6f0ff;
+}
+
+.day.completed {
+    background-color: #e8f5e9; /* Light green */
+    border-left: 5px solid #4CAF50;
+}
+
+.day.completed .day-header h3 {
+    /* text-decoration: line-through; */ /* Optional: remove strikethrough if calendar shows status */
+    color: #555;
+}
+
+/* ... (rest of your existing CSS for day-header, day-tasks, day-log, etc.) ... */
+
+.day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.day-header h3 {
+    margin: 0;
+    color: #333;
+    font-size: 1.2em;
+}
+
+.day-header h3 i {
+    margin-right: 8px;
+    color: #555;
+}
+
+.day-tasks h4 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #0056b3;
+}
+
+.day-tasks ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+}
+
+.day-tasks li {
+    margin-bottom: 5px;
+    padding-left: 1.2em;
+    position: relative;
+}
+
+.day-tasks li::before {
+    content: "\f0da"; /* FontAwesome right arrow */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: #0056b3;
+}
+
+.day-log {
+    margin-top: 15px;
+}
+
+.day-log label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.day-log textarea {
+    width: 95%;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1em;
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.day-controls {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.complete-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    min-width: 150px; /* Ensure button width is consistent */
+    text-align: center;
+}
+
+.complete-button:hover {
+    background-color: #218838;
+}
+
+.complete-button.unmark {
+    background-color: #ffc107;
+    color: #333;
+}
+.complete-button.unmark:hover {
+    background-color: #e0a800;
+}
+
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    font-size: 0.9em;
+    color: #777;
+}
